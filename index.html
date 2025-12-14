@@ -12,72 +12,180 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      color: #f1ece6;
-      background: linear-gradient(rgba(20,15,12,0.88), rgba(20,15,12,0.88)),
-        url('https://travellingbalkans.com/wp-content/uploads/2019/09/DJI_0853-HDR-1150x862.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: ;
-    }
+    
+    /* Hide page until welcome ends */
+body.hidden {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
 
-    .navbar {
-      background-color: rgba(43,29,20,0.95);
-    }
+body.show {
+  opacity: 1;
+}
 
-    .navbar-brand, .nav-link {
-      color: #e6d3b1 !important;
-      font-weight: 600;
-    }
+/* Welcome overlay */
+#welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(20,15,12,0.96), rgba(20,15,12,0.96)),
+              url('https://travellingbalkans.com/wp-content/uploads/2019/09/DJI_0853-HDR-1150x862.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .nav-link:hover {
-      color: #b84a3a !important;
-    }
+  opacity: 1;           
+  transition: opacity 5s ease; /* Increase fade duration to 4 seconds */
+}
 
-    .hero {
-      padding: 140px 20px;
-      text-align: justify;
-        
-    }
+#welcome-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
 
-    .hero h1 {
-      font-size: 3.2rem;
-      color: #cfa670;
-    }
 
-    section {
-      padding: 80px 20px;
-    }
+.welcome-box {
+  text-align: center;
+  animation: zoomIn 1.5s ease;
+}
 
-    .section-title {
-      color: #b84a3a;
-      margin-bottom: 40px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-align: center;
-    }
+.welcome-box h1 {
+  font-size: 3rem;
+  color: #cfa670;
+  letter-spacing: 3px;
+}
 
-    .btn-custom {
-      background-color: #6b2d1a;
-      color: #fff;
-      border: none;
-    }
+.welcome-box p {
+  color: #e6d3b1;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-style: italic;
+}
 
-    .btn-custom:hover {
-      background-color: #b84a3a;
-    }
+/* Progress bar */
+.progress-container {
+  width: 280px;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto;
+}
 
-    footer {
-      background-color: rgba(43,29,20,0.95);
-      padding: 30px;
-      text-align: center;
-      color: #bbb;
-    }
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #cfa670;
+  animation: loadBar 3s linear forwards;
+}
+
+@keyframes loadBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
   </style>
 </head>
 <body>
+<!-- WELCOME OVERLAY -->
+<div id="welcome-overlay">
+  <div class="welcome-box">
+    <h1>Mirë se vini</h1>
+    <p>Një projekt i realizuar nga e klasa e 10-B</p>
 
+    <!-- Progress bar -->
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Intro Sound -->
+  <audio id="welcome-sound" preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0c1a43e5c3.mp3?filename=soft-piano-logo-144998.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<style>
+    body {
+  font-family: 'Playfair Display', serif;
+  color: #f1ece6;
+  background: linear-gradient(rgba(20,15,12,0.88), rgba(20,15,12,0.88)),
+              url('https://travellingbalkans.com/wp-content/uploads/2019/09/DJI_0853-HDR-1150x862.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: ;
+}
+
+.navbar {
+  background-color: rgba(43,29,20,0.95);
+}
+
+.navbar-brand,
+.nav-link {
+  color: #e6d3b1 !important;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #b84a3a !important;
+}
+
+.hero {
+  padding: 140px 20px;
+  text-align: justify;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  color: #cfa670;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.section-title {
+  color: #b84a3a;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.btn-custom {
+  background-color: #6b2d1a;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #b84a3a;
+}
+
+footer {
+  background-color: rgba(43,29,20,0.95);
+  padding: 30px;
+  text-align: center;
+  color: #bbb;
+}
+
+
+  </style>
+
+<body>
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -110,6 +218,9 @@
   </div>
 </nav>
 
+
+
+
 <!-- HERO -->
 <header class="hero">
   <h1>Fjala që mbetet</h1>
@@ -122,13 +233,76 @@
     <!-- Shto përshkrimin e projektit këtu -->
   </p>
 </section>
-
+  </body>
 <!-- REFERENCES PREVIEW -->
 
 <footer>
-  <p>Sinfonia e Fjalës © 2025-2026 | Projekt Shkollor</p>
+  <p>Sinfonia e Fjalës © 2025-2026 | Faqja Kryesore</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+    const overlay = document.getElementById('welcome-overlay');
+    const mainContent = document.getElementById('main-content');
+
+    // Show welcome only once per session
+    if (!sessionStorage.getItem('welcomeShown')) {
+      document.body.classList.add('hidden');
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        if (overlay) overlay.classList.add('hide'); // Start fade
+        document.body.classList.remove('hidden');
+        document.body.classList.add('show');
+        document.body.style.overflow = 'auto';
+        if (mainContent) mainContent.classList.add('show');
+      }, 2500); // Wait 3.5s before fade
+
+      // Remove overlay after fade duration (4s)
+      overlay.addEventListener('transitionend', () => {
+        overlay.remove();const overlay = document.getElementById('welcome-overlay');
+const mainContent = document.getElementById('main-content');
+
+if (!sessionStorage.getItem('welcomeShown')) {
+  document.body.classList.add('hidden');
+  document.body.style.overflow = 'hidden';
+
+  setTimeout(() => {
+    if (overlay) overlay.classList.add('hide'); // Start fade
+    document.body.classList.remove('hidden');
+    document.body.classList.add('show');
+    document.body.style.overflow = 'auto';
+    if (mainContent) mainContent.classList.add('show');
+  }, 2500); // 3.5s wait
+
+  // Remove overlay after fade ends
+  if (overlay) {
+    overlay.addEventListener('transitionend', () => overlay.remove());
+  }
+
+  sessionStorage.setItem('welcomeShown', 'true');
+
+} else {
+  // Already shown in session
+  if (overlay) overlay.remove();
+  document.body.classList.add('show');
+  document.body.style.overflow = 'auto';
+  if (mainContent) mainContent.classList.add('show');
+}
+
+      });
+
+      sessionStorage.setItem('welcomeShown', 'true');
+
+    } else {
+      // If already shown, remove overlay immediately
+      if (overlay) overlay.remove();
+      document.body.classList.add('show');
+      document.body.style.overflow = 'auto';
+      if (mainContent) mainContent.classList.add('show');
+    }
+  </script>
+
+
 </body>
 </html>
