@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sinfonia e Fjalës</title>
+  <title>Referencat | Sinfonia e Fjalës</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     body {
@@ -19,7 +22,6 @@
         url('https://travellingbalkans.com/wp-content/uploads/2019/09/DJI_0853-HDR-1150x862.jpg');
       background-size: cover;
       background-attachment: fixed;
-      background-position: ;
     }
 
     .navbar {
@@ -35,19 +37,8 @@
       color: #b84a3a !important;
     }
 
-    .hero {
-      padding: 140px 20px;
-      text-align: justify;
-        
-    }
-
-    .hero h1 {
-      font-size: 3.2rem;
-      color: #cfa670;
-    }
-
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
     }
 
     .section-title {
@@ -58,16 +49,37 @@
       text-align: center;
     }
 
-    .btn-custom {
-      background-color: #6b2d1a;
-      color: #fff;
-      border: none;
+    .reference-card {
+      background: rgba(42,37,34,0.95);
+      border-radius: 18px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
     }
 
-    .btn-custom:hover {
-      background-color: #b84a3a;
+    .reference-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.85);
+      background: rgba(207,166,112,0.15);
     }
 
+    .reference-card h5 {
+      color: #cfa670;
+    }
+
+    .reference-card p {
+      color: #e6d3b1;
+    }
+
+    .btn-outline-warning {
+      border-color: #cfa670;
+      color: #cfa670;
+    }
+
+    .btn-outline-warning:hover {
+      background-color: #cfa670;
+      color: #2c1d14;
+    }
+    
     footer {
       background-color: rgba(43,29,20,0.95);
       padding: 30px;
@@ -76,6 +88,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -87,110 +100,79 @@
     </button>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-
         <li class="nav-item"><a class="nav-link" href="index.html">Faqja Kryesore</a></li>
-        <li class="nav-item"><a class="nav-link" href="rreth%20-nesh.html">Rreth Nesh</a></li>
-        <li class="nav-item"><a class="nav-link" href="referencat.html">Referencat</a></li>
+        <li class="nav-item"><a class="nav-link" href="rreth-nesh.html">Rreth Nesh</a></li>
+        <li class="nav-item"><a class="nav-link active" href="referencat.html">Referencat</a></li>
 
-        <!-- Analiza dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="analiza.html" id="analizaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="analizaDropdown" role="button" data-bs-toggle="dropdown">
             Analiza
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="analizaDropdown">
+          <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="krijime.html">Krijime</a></li>
-            <li><a class="dropdown-item" href="analize-letrare.html">Analize letrare</a></li>
+            <li><a class="dropdown-item" href="analize-letrare.html">Analizë letrare</a></li>
             <li><a class="dropdown-item" href="histori.html">Histori</a></li>
-            
           </ul>
         </li>
-
       </ul>
     </div>
   </div>
 </nav>
 
-<section class="container mt-5 mb-5" data-aos="fade-up">
+<!-- REFERENCES -->
+<section class="container" data-aos="fade-up">
   <h2 class="section-title">Referencat</h2>
 
   <div class="row g-4">
 
-    <!-- Reference 1 -->
     <div class="col-md-6 col-lg-4" data-aos="flip-left">
       <div class="card reference-card h-100 p-3">
         <div class="card-body">
-          <h5 class="card-title">Analizë vepre</h5>
-          <p class="card-text">Analiza letrare e veprës “Ferri” nga Dante Aligeri. </p>
-          <a href="from https://maturashteterore.com/2025/04/28/analiza-letrare-e-vepres-ferri-nga-dante-aligeri/" target="_blank" class="btn btn-outline-warning">Vizito</a>
-        
+          <h5>Analizë vepre</h5>
+          <p>Analiza letrare e veprës “Ferri” nga Dante Aligeri.</p>
+          <a href="https://maturashteterore.com/2025/04/28/analiza-letrare-e-vepres-ferri-nga-dante-aligeri/"
+             target="_blank" class="btn btn-outline-warning">Vizito</a>
         </div>
-        
       </div>
     </div>
 
-    <!-- Reference 2 -->
     <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
       <div class="card reference-card h-100 p-3">
         <div class="card-body">
-          <h5 class="card-title">Analiza Historie</h5>
-          <p class="card-text">Të huajt për shqipen dhe shqiptarët.</p>
-          <a href="https://www.balkanweb.com/te-huajt-per-shqipen-dhe-shqiptaret-britannica-shqipja-vjen-nga-ilirishtja-emri-shqiptar-eshte-gjetur-ne-te-dhenat-qe-nga-koha-e-ptolemeut-kur-ne-ballkan-nuk-kishte-ende-sllave/#gsc.tab=0" target="_blank" class="btn btn-outline-warning mt-2">Vizito</a>
+          <h5>Analiza Historie</h5>
+          <p>Të huajt për shqipen dhe shqiptarët.</p>
+          <a href="https://www.balkanweb.com/te-huajt-per-shqipen-dhe-shqiptaret-britannica-shqipja-vjen-nga-ilirishtja-emri-shqiptar-eshte-gjetur-ne-te-dhenat-qe-nga-koha-e-ptolemeut-kur-ne-ballkan-nuk-kishte-ende-sllave/"
+             target="_blank" class="btn btn-outline-warning">Vizito</a>
         </div>
       </div>
     </div>
 
-    <!-- Reference 3 -->
     <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
       <div class="card reference-card h-100 p-3">
         <div class="card-body">
-          <h5 class="card-title">Dokumentet</h5>
-          <p class="card-text">Këtu dot të gjeni të gjitha dokumentet që janë punuar nga ne</p>
-          <a href="https://www.example3.com" target="_blank" class="btn btn-outline-warning mt-2">Vizito</a>
+          <h5>Dokumentet</h5>
+          <p>Dokumente dhe materiale të përpunuara nga nxënësit.</p>
+          <a href="#" class="btn btn-outline-warning">Vizito</a>
         </div>
       </div>
     </div>
-<div class="text-center mt-5">
+
+  </div>
+
+  <div class="text-center mt-5">
     <a href="index.html" class="btn btn-secondary">⬅ Kthehu tek Faqja Kryesore</a>
   </div>
-  </div>
 </section>
+  
+<footer>
+  <p>Sinfonia e Fjalës © 2025-2026| Referencat</p>
+</footer>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+</script>
 
-<style>
-  .reference-card {
-    background: rgba(42,37,34,0.95);
-    border-radius: 18px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
-  }
-
-  .reference-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.85);
-    background: rgba(207,166,112,0.15);
-  }
-
-  .reference-card h5 {
-    color: #cfa670;
-  }
-
-  .reference-card p {
-    color: #e6d3b1;
-  }
-
-  .reference-card .btn-outline-warning {
-    border-color: #cfa670;
-    color: #cfa670;
-    transition: all 0.3s ease;
-  }
-
-  .reference-card .btn-outline-warning:hover {
-    background-color: #cfa670;
-    color: #2c1d14;
-  }
-
-  @media (max-width: 767px) {
-    .section-title {
-      font-size: 2rem;
-    }
-  }
-</style>
+</body>
+</html>
