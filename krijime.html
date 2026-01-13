@@ -94,6 +94,44 @@
       border-radius: 5px;
       margin-top: 15px;
     }
+   /* ✅ Make columns equal-height and keep equal spacing */
+.row.g-5 > [class*="col-"]{
+  display: flex;
+}
+
+/* ✅ Make mag cards equal height */
+.mag-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Make content stretch so cards look balanced */
+.mag-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Make text structured (no "hanging") */
+.mag-content p{
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* ✅ Keep accent line always at bottom (nice alignment) */
+.mag-content .accent-line{
+  margin-top: auto;
+}
+ 
+   
+
+    .poezi p {
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
 
    footer {
       background-color: rgba(43,29,20,0.95);
@@ -108,7 +146,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Sinfonia e Fjalës</a>
+    <a class="navbar-brand" href="krijime.html">Sinfonia e Fjalës</a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -118,15 +156,14 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Faqja Kryesore</a></li>
         <li class="nav-item"><a class="nav-link" href="rreth-nesh.html">Rreth Nesh</a></li>
         <li class="nav-item"><a class="nav-link" href="referencat.html">Referencat</a></li>
-
+        <li class="nav-item"><a class="nav-link" href="analiza.html">Analiza</a></li>
         <!-- Analiza dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="analiza.html" id="analizaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Analiza
+            Më shumë
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="analizaDropdown">
-            <li><a class="dropdown-item" href="krijime.html">Krijime</a></li>
-            <li><a class="dropdown-item" href="analize-letrare.html">Analize letrare</a></li>
+            <li><a class="dropdown-item active" href="krijime.html">Krijime</a></li>
             <li><a class="dropdown-item" href="histori.html">Histori</a></li>
             
           </ul>
@@ -140,47 +177,86 @@
 <!-- HEADER -->
 <header>
   <h1 data-aos="fade-down">Krijimet e Nxënësve</h1>
-  <p data-aos="fade-up">Një revistë digjitale me poezi, ese dhe krijime artistike</p>
+  <p data-aos="fade-up">Poezi dhe krijim artistik</p>
 </header>
 
 <!-- MAGAZINE SECTION -->
 <section class="container pb-5">
-  <div class="row g-5">
+ <div class="row g-5 justify-content-center">
+
 
     <!-- Card 1 -->
     <div class="col-md-6 col-lg-4" data-aos="fade-up">
       <div class="mag-card">
-        <img src="https://via.placeholder.com/600x400" alt="Krijim 1">
         <div class="mag-content">
+          
+          <div class="poezi">
           <span>Poezi</span>
-          <h4>Titulli i Krijimit</h4>
-          <p>Një poezi që pasqyron ndjenjat, mendimet dhe frymëzimin e nxënësit.</p>
+          <h4>Fjala që mbetet</h4>
+  <p>
+    Fjala lind si dritë në errësirë,<br>
+    si yll i vogël në natë të lirë,<br>
+    ajo s’plaket kurrë, s’ka varr, s’ka fund,<br>
+    udhëton në kohë si një zë i shenjtë, i gjallë gjithkund.
+  </p>
+
+  <p>
+    Fjala është shpresë kur zemra tretet,<br>
+    është plagë që shëron, është dorë që flet,<br>
+    kur gjithçka ikën dhe bota tretet,<br>
+    fjala që mbetet, është ajo që mbetet.
+  </p>
+
+  <p>
+    Në erë mund të humbasë një premtim,<br>
+    por fjala e sinqertë ka përjetësim,<br>
+    ajo s’ka frikë nga koha, as nga stuhitë,<br>
+    mban brenda shpirtin dhe ëndrrat e rinisë.
+  </p>
+
+  <p>
+    Një fjalë e mirë është dritë në errësirë,<br>
+    një fjalë e keqe plagë e pashërirë,<br>
+    ndaj gjuha jonë duhet peshë të ketë,<br>
+    se fjala që hidhet, në zemra mbetet.
+  </p>
+
+  <p>
+    Kur zëri shuhet dhe hapat ndalen,<br>
+    kur kujtimet larg ngadalë treten e dalen,<br>
+    mbetet veç fjala si shenjë në jetë,<br>
+    si gur i vogël në kohë, që kurrë s’rrënohet vetë.
+  </p>
+
+  <p>
+    Prandaj fol me zemër, fol me të vërtetë,<br>
+    se fjala është pasuria që s’vidhet, s’fshihet lehtë,<br>
+    ajo është historia që shpirti e mban,<br>
+    fjala që mbetet, është vetë njeriu në plan.
+  </p>
+
+</div>
+
           <div class="accent-line" style="background:#cfa670; width:80%"></div>
         </div>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="mag-card">
-        <img src="https://via.placeholder.com/600x400" alt="Krijim 2">
-        <div class="mag-content">
-          <span>Ese</span>
-          <h4>Reflektim Letrar</h4>
-          <p>Ese analitike mbi temën e identitetit, shoqërisë dhe fjalës.</p>
-          <div class="accent-line" style="background:#b84a3a; width:70%"></div>
-        </div>
-      </div>
-    </div>
 
     <!-- Card 3 -->
     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
       <div class="mag-card">
-        <img src="https://via.placeholder.com/600x400" alt="Krijim 3">
         <div class="mag-content">
+          
           <span>Prozë</span>
-          <h4>Tregim i Shkurtër</h4>
-          <p>Një tregim imagjinar i ndërtuar mbi simbolikë dhe emocione.</p>
+          <h4>Fjala që mbetet</h4>
+          <p>Fjala ka qenë dhe mbetet një nga mjetet më të fuqishme të njeriut për të shprehur mendimet, ndjenjat dhe përvojat e tij. Ajo lind si tingull, por jeton si kuptim; shqiptohet për një çast, por mund të mbetet përjetësisht në kujtesën e njerëzve. Në rrjedhën e kohës, shumë gjëra humbasin, zbehen ose harrohen, por fjala e thënë me mendim, me ndjenjë dhe me përgjegjësi është ajo që mbetet dhe lë gjurmë të pashlyeshme në shpirtin e njeriut dhe në historinë e shoqërisë.
+Që nga lashtësia, fjala ka qenë themeli i komunikimit njerëzor. Përmes saj janë përcjellë legjenda, mite, këngë dhe histori që kanë mbijetuar brez pas brezi. Shkrimtarë, poetë dhe mendimtarë të mëdhenj kanë arritur të jetojnë përtej kohës pikërisht falë fjalës së shkruar. Një varg poetik, një thënie e mençur apo një fjalim i fuqishëm mund të ndikojë mendësinë e një kombi të tërë dhe të frymëzojë ndryshime të mëdha shoqërore. Kështu, fjala shndërrohet në një trashëgimi shpirtërore që nuk venitet.
+Megjithatë, jo çdo fjalë mbetet. Fjalët e thëna pa menduar, të zbrazëta ose të përdorura për të lënduar, shpesh humbasin vlerën dhe treten në harresë. Ndërsa fjala e sinqertë, e drejtë dhe e thënë në momentin e duhur ka forcën të qëndrojë gjatë. Një fjalë ngushëllimi në një çast të vështirë, një këshillë e dhënë me dashuri apo një e vërtetë e thënë me guxim, janë fjalë që mbeten të gdhendura në kujtesën e atij që i dëgjon.
+Fjala që mbetet është edhe fjala e përgjegjshme. Në shoqërinë e sotme, ku komunikimi është i shpejtë dhe shpesh i sipërfaqshëm, njeriu rrezikon të harrojë peshën e fjalës. Por historia na mëson se fjala mund të ndërtojë ose të shkatërrojë, të bashkojë ose të ndajë. Prandaj, është detyrë e çdo individi të mendojë përpara se të flasë, duke qenë i vetëdijshëm se fjala e tij mund të ketë pasoja të gjata.
+Në jetën personale, fjala që mbetet është ajo që lidhet me kujtimet më të rëndësishme. Shpesh kujtojmë fjalët e prindërve, të mësuesve apo të miqve që na kanë udhëzuar në momente vendimtare. Ato fjalë na kanë formuar karakterin, na kanë dhënë forcë për të vazhduar dhe na kanë mësuar vlerat themelore të jetës. Edhe pas shumë vitesh, ato vazhdojnë të na shoqërojnë si një zë i brendshëm që na udhëzon.
+Në përfundim, fjala që mbetet është ajo që buron nga mendja dhe zemra, që shërben për të ndërtuar dhe jo për të lënduar. Ajo është pasqyra e shpirtit të njeriut dhe dëshmia më e qartë e ndikimit të tij në botë. Ndaj, duhet ta vlerësojmë fjalën, ta përdorim me maturi dhe ta shndërrojmë në një mjet për të lënë pas gjurmë pozitive. Sepse në fund, nuk janë vetëm veprat që na përfaqësojnë, por edhe fjalët që kemi thënë – ato që kanë mbetur.
+</p>
           <div class="accent-line" style="background:#6aa84f; width:90%"></div>
         </div>
       </div>
