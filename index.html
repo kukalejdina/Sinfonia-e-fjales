@@ -93,25 +93,10 @@ body.show {
 
   </style>
 </head>
-<body>
+
 <!-- WELCOME OVERLAY -->
-<div id="welcome-overlay">
-  <div class="welcome-box">
-    <h1>Mirë se vini</h1>
-    <p>Një projekt i realizuar nga e klasa e 10-B</p>
 
-    <!-- Progress bar -->
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
-  </div>
-
-  <!-- Intro Sound -->
-  <audio id="welcome-sound" preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0c1a43e5c3.mp3?filename=soft-piano-logo-144998.mp3" type="audio/mpeg">
-  </audio>
-</div>
-
+  <body>
 <style>
     body {
   font-family: 'Playfair Display', serif;
@@ -175,11 +160,10 @@ footer {
   text-align: center;
   color: #bbb;
 }
-
-
   </style>
-
-<body>
+</body>
+ 
+  <body>
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -190,18 +174,17 @@ footer {
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
 
-        <li class="nav-item"><a class="nav-link" href="index.html">Faqja Kryesore</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Faqja Kryesore</a></li>
         <li class="nav-item"><a class="nav-link" href="rreth-nesh.html">Rreth Nesh</a></li>
         <li class="nav-item"><a class="nav-link" href="referencat.html">Referencat</a></li>
-
+        <li class="nav-item"><a class="nav-link" href="analiza.html">Analiza</a></li>
         <!-- Analiza dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="analiza.html" id="analizaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Analiza
+            Më shumë
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="analizaDropdown">
             <li><a class="dropdown-item" href="krijime.html">Krijime</a></li>
-            <li><a class="dropdown-item" href="analize-letrare.html">Analize letrare</a></li>
             <li><a class="dropdown-item" href="histori.html">Histori</a></li>
             
           </ul>
@@ -212,7 +195,7 @@ footer {
   </div>
 </nav>
 
-
+  
 
 
 <!-- HERO -->
@@ -220,6 +203,18 @@ footer {
   <h1>Fjala që mbetet</h1>
   <p class="mt-4 fs-5">Sinfonia e Fjalës është një projekt që i kushtohet plotësisht fuqisë së fjalës dhe ndikimit të saj në jetën e njerëzve. Në një botë ku ritmi i përditshmërisë po bëhet gjithnjë e më i shpejtë, shpesh harrojmë të ndalemi e të reflektojmë mbi rolin e vërtetë që fjala luan në formimin e mendimit, emocionit dhe kujtesës sonë kolektive. Edhe pse fytyrat, zërat dhe emrat mund të zbehen me kalimin e kohës, tingujt dhe domethënia e fjalëve vazhdojnë të mbeten të gjalla, duke lënë gjurmë të thella tek çdo individ.</p><br>
     Gjuha shqipe, e njohur për pasurinë, larmishmërinë dhe hijeshinë e saj, është qendra e këtij projekti. Ajo është një gjuhë që mund të komunikojë butësi dhe forcë njëkohësisht, një gjuhë që krijon ritme, imazhe dhe ndjesi të thella. Për këtë arsye, çdo individ duhet të dijë ta përdorë me vetëdije, pasi jehona e fjalëve është e fuqishme dhe shpesh lë gjurmë të pashlyeshme.
+Në thelb, Sinfonia e Fjalës synon të rikujtojë se fjala mbetet—mbetet përtej kohës, përtej brezave dhe përtej harresës, duke ushqyer mendjen dhe shpirtin e njeriut.
+  <p style="font-style: italic; font-family: 'Georgia', serif;">
+  simfoní,-a emër i gjinisë femërore; numri shumës; -(të) 
+  1. term në muzikë; vepër e gjatë muzikore për orkestër të madhe, 
+  zakonisht me tri a me katër kohë: simfonia e nëntë e Bethovenit; 
+  koha e parë (e dytë) e simfonisë. 
+  2. kuptim i figurshëm; i ligjërimit libror; 
+  tërësi e harmonishme dhe e këndshme tingujsh, ngjyrash etj.: 
+  simfoni ngjyrash.
+</p>
+
+
 </header>
 <section class="container">
   <h2 class="section-title">Të flasësh duke heshtur është një urti' perëndish.</h2>
@@ -227,76 +222,12 @@ footer {
     <!-- Shto përshkrimin e projektit këtu -->
   </p>
 </section>
-  </body>
+
 <!-- REFERENCES PREVIEW -->
 
 <footer>
   <p>Sinfonia e Fjalës © 2025-2026 | Faqja Kryesore</p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- <script>
-    const overlay = document.getElementById('welcome-overlay');
-    const mainContent = document.getElementById('main-content');
-
-    // Show welcome only once per session
-    if (!sessionStorage.getItem('welcomeShown')) {
-      document.body.classList.add('hidden');
-      document.body.style.overflow = 'hidden';
-
-      setTimeout(() => {
-        if (overlay) overlay.classList.add('hide'); // Start fade
-        document.body.classList.remove('hidden');
-        document.body.classList.add('show');
-        document.body.style.overflow = 'auto';
-        if (mainContent) mainContent.classList.add('show');
-      }, 2500); // Wait 3.5s before fade
-
-      // Remove overlay after fade duration (4s)
-      overlay.addEventListener('transitionend', () => {
-        overlay.remove();const overlay = document.getElementById('welcome-overlay');
-const mainContent = document.getElementById('main-content');
-
-if (!sessionStorage.getItem('welcomeShown')) {
-  document.body.classList.add('hidden');
-  document.body.style.overflow = 'hidden';
-
-  setTimeout(() => {
-    if (overlay) overlay.classList.add('hide'); // Start fade
-    document.body.classList.remove('hidden');
-    document.body.classList.add('show');
-    document.body.style.overflow = 'auto';
-    if (mainContent) mainContent.classList.add('show');
-  }, 2500); // 3.5s wait
-
-  // Remove overlay after fade ends
-  if (overlay) {
-    overlay.addEventListener('transitionend', () => overlay.remove());
-  }
-
-  sessionStorage.setItem('welcomeShown', 'true');
-
-} else {
-  // Already shown in session
-  if (overlay) overlay.remove();
-  document.body.classList.add('show');
-  document.body.style.overflow = 'auto';
-  if (mainContent) mainContent.classList.add('show');
-}
-
-      });
-
-      sessionStorage.setItem('welcomeShown', 'true');
-
-    } else {
-      // If already shown, remove overlay immediately
-      if (overlay) overlay.remove();
-      document.body.classList.add('show');
-      document.body.style.overflow = 'auto';
-      if (mainContent) mainContent.classList.add('show');
-    }
-  </script>
-
 
 </body>
 </html>
